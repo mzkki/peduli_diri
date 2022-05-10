@@ -38,3 +38,5 @@ Route::post('/logout', [LoginController::class, 'logout'])->middleware('auth');
 
 Route::get('/register', [RegisterController::class, 'index'])->middleware('guest');
 Route::post('/register', [RegisterController::class, 'store']);
+
+Route::post('/tambah', [HistoryController::class, 'store']);

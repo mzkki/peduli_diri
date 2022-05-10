@@ -16,10 +16,10 @@ return new class extends Migration
         Schema::create('histories', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id');
-            $table->string('tanggal');
-            $table->string('waktu');
+            $table->date('tanggal');
+            $table->time('waktu');
             $table->string('lokasi');
-            $table->string('suhu');
+            $table->float('suhu');
             $table->timestamps();
         });
     }

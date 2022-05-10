@@ -35,31 +35,31 @@ class DatabaseSeeder extends Seeder
 
         History::create([
             'user_id' => 1,
-            'tanggal' => '13-09-2021',
-            'waktu' => '08.00',
+            'tanggal' => '2021-09-13',
+            'waktu' => '08:00',
             'lokasi' => 'Toko Buku Hangat',
-            'suhu' => '36,2'
+            'suhu' => '36.2'
         ]);
         History::create([
             'user_id' => 3,
-            'tanggal' => '13-09-2021',
-            'waktu' => '10.00',
+            'tanggal' => '2021-09-13',
+            'waktu' => '10:00',
             'lokasi' => 'Bulan Dept Store',
-            'suhu' => '36,2'
+            'suhu' => '36.2'
         ]);
         History::create([
             'user_id' => 1,
-            'tanggal' => '16-09-2021',
-            'waktu' => '15.00',
+            'tanggal' => '2021-09-16',
+            'waktu' => '15:00',
             'lokasi' => 'Pagi Jogging Area',
-            'suhu' => '37,0'
+            'suhu' => '37.0'
         ]);
         History::create([
             'user_id' => 2,
-            'tanggal' => '14-09-2021',
-            'waktu' => '11.00',
+            'tanggal' => '2021-09-14',
+            'waktu' => '11:00',
             'lokasi' => 'Kelapa Gading',
-            'suhu' => '36,4'
+            'suhu' => '36.4'
         ]);
     }
 }

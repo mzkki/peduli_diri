@@ -14,19 +14,24 @@ class HistoryController extends Controller
             'histories' => History::where('user_id', auth()->user()->id)->get()
         ]);
     }
+
+    public function store(Request $request)
+    {
+        $request->validate([
+            'tanggal' => 'required',
+            'waktu' => 'required',
+            'lokasi' => 'required',
+            'suhu' => 'required'
+        ]);
+
+        History::create([
+            'user_id' => auth()->user()->id,
+            'tanggal' => $request->tanggal,
+            'waktu' => $request->waktu,
+            'lokasi' => $request->lokasi,
+            'suhu' => $request->suhu
+        ]);
+
+        return redirect()->to('/history');
+    }
 }
-
-// User::create(
-//     [
-//         'nik' => '6471040812040001',
-//         'fullname' => 'Haris Muzakki Indra',
-//     ]
-// );
-
-// History::create([
-//     'user_id' => 1,
-//     'tanggal' => '16-09-2021',
-//     'waktu' => '15.00',
-//     'lokasi' => 'Pagi Jogging Area',
-//     'suhu' => '37,0'
-// ]);
