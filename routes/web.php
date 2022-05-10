@@ -29,3 +29,9 @@ Route::get('/history', function () {
         'title' => 'Catatan Perjalanan'
     ]);
 });
+
+Route::get('/add', function () {
+    return view('add', [
+        'title' => 'Tambah Data Perjalanan'
+    ]);
+});

@@ -64,4 +64,10 @@ td, th {
     padding: 6px
 }
 
+.formel{
+    padding: 0;
+    border: 1px solid black;
+    width: 305px;
+    margin-left: 90px;
+}
 
