@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\HistoryController;
+use App\Http\Controllers\RegisterController;
 use Illuminate\Support\Facades\Route;
 use App\Models\History;
 
@@ -40,8 +41,5 @@ Route::get('/login', function () {
     ]);
 });
 
-Route::get('/register', function () {
-    return view('auth.register', [
-        'title' => 'Register'
-    ]);
-});
+Route::get('/register', [RegisterController::class, 'index']);
+Route::post('/register', [RegisterController::class, 'store']);
