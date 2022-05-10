@@ -15,3 +15,18 @@ class HistoryController extends Controller
         ]);
     }
 }
+
+// User::create(
+//     [
+//         'nik' => '6471040812040001',
+//         'fullname' => 'Haris Muzakki Indra',
+//     ]
+// );
+
+// History::create([
+//     'user_id' => 1,
+//     'tanggal' => '16-09-2021',
+//     'waktu' => '15.00',
+//     'lokasi' => 'Pagi Jogging Area',
+//     'suhu' => '37,0'
+// ]);

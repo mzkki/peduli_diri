@@ -22,6 +22,11 @@ class User extends Authenticatable
         'fullname'
     ];
 
+    public function history()
+    {
+        return $this->hasMany(History::class);
+    }
+
     /**
      * The attributes that should be hidden for serialization.
      *

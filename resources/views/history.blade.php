@@ -23,10 +23,10 @@
             </tr>
             @foreach ($histories as $history)
             <tr class="item">
-                <td>{{ $history['tanggal'] }}</td>
-                <td>{{ $history['waktu'] }}</td>
-                <td>{{ $history['lokasi']}}</td>
-                <td>{{ $history['suhu'] }}</td>
+                <td>{{ $history->tanggal }}</td>
+                <td>{{ $history->waktu }}</td>
+                <td>{{ $history->lokasi }}</td>
+                <td>{{ $history->suhu }}</td>
             </tr>
             @endforeach
         </table>
