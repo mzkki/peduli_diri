@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\HistoryController;
 use Illuminate\Support\Facades\Route;
+use App\Models\History;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,11 +26,7 @@ Route::get('/login', function () {
     return view('auth.login');
 });
 
-Route::get('/history', function () {
-    return view('history', [
-        'title' => 'Catatan Perjalanan'
-    ]);
-});
+Route::get('/history', [HistoryController::class, 'index']);
 
 Route::get('/add', function () {
     return view('add', [
