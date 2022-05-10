@@ -3,7 +3,9 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-3">
-                <img src="https://source.unsplash.com/100x100" class="rounded mx-auto d-block" alt="profile">
+                {{-- <div class="text-center"> --}}
+                    <img src="https://source.unsplash.com/150x150" class="rounded float-end" alt="...">
+                {{-- </div> --}}
             </div>
             <div class="col-sm-9">
                 <div class="header">
@@ -12,12 +14,11 @@
                 </div>
                 <div class="link">
                     <nav class="nav">
-                        <a class="nav-link nav-first" href="#">Home</a> |
-                        <a class="nav-link" href="#">Catatan Perjalanan</a>|
+                        <a class="nav-link nav-first" href="/">Home</a> |
+                        <a class="nav-link" href="/history">Catatan Perjalanan</a>|
                         <a class="nav-link" href="#">Isi Data</a>
                     </nav>
                 </div>
-
                 
                 @yield('main')
                 
