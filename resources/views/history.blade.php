@@ -10,7 +10,7 @@
             </select>
         </div>
         <div class="mx-2 bd-highlight">
-            <button class="btn-filter">Urutkan</button>
+            <button class="btn-filter" type="submit">Urutkan</button>
         </div>
     </div>
     <div class="main" style="padding: 50px">

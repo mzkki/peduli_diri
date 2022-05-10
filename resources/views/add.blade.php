@@ -29,7 +29,7 @@
   </div>
   
   <div class="nav justify-content-end mt-3 mb-4">
-    <a class="btn" href="#">Simpan</a>
+    <button class="btn" type="submit">Simpan</button>
   </div>
 
 </div>

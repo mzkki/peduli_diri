@@ -35,3 +35,9 @@ Route::get('/add', function () {
         'title' => 'Tambah Data Perjalanan'
     ]);
 });
+
+Route::get('/login', function () {
+    return view('auth.login', [
+        'title' => 'Login'
+    ]);
+});

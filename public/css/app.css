@@ -31,7 +31,7 @@
 
 .btn-filter {
     border: solid black 2px;
-    box-shadow: 1px 2px ;
+    box-shadow: 1px 2px;
     padding: 0;
     padding-left: 10px;
     padding-right: 10px;
@@ -69,5 +69,11 @@ td, th {
     border: 1px solid black;
     width: 305px;
     margin-left: 90px;
+}
+
+.formlogin{
+    border-radius: 0;
+    border: 1px solid black;
+    width: 400px;
 }
 
