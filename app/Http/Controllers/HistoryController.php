@@ -11,7 +11,7 @@ class HistoryController extends Controller
     {
         return view('history', [
             'title' => 'Catatan Perjalanan',
-            'histories' => History::all()
+            'histories' => History::where('user_id', auth()->user()->id)->get()
         ]);
     }
 }

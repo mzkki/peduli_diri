@@ -22,22 +22,19 @@ Route::get('/', function () {
         'title' => 'Home',
         'nama' => 'Haris Muzakki'
     ]);
-});
+})->middleware('auth');
 
-Route::get('/login', function () {
-    return view('auth.login');
-});
-
-Route::get('/history', [HistoryController::class, 'index']);
+Route::get('/history', [HistoryController::class, 'index'])->middleware('auth');
 
 Route::get('/add', function () {
     return view('add', [
         'title' => 'Tambah Data Perjalanan'
     ]);
-});
+})->middleware('auth');
 
-Route::get('/login', [LoginController::class, 'index'])->middleware('guest');
+Route::get('/login', [LoginController::class, 'index'])->name('login')->middleware('guest');
 Route::post('/login', [LoginController::class, 'authenticate']);
+Route::post('/logout', [LoginController::class, 'logout'])->middleware('auth');
 
-Route::get('/register', [RegisterController::class, 'index']);
+Route::get('/register', [RegisterController::class, 'index'])->middleware('guest');
 Route::post('/register', [RegisterController::class, 'store']);

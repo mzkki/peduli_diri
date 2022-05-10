@@ -15,7 +15,10 @@
                     <a class="nav-link nav-first" href="/">Home</a> |
                     <a class="nav-link" href="/history">Catatan Perjalanan</a>|
                     <a class="nav-link" href="/add">Isi Data</a>|
-                    <a href="/logout" class="nav-link">Logout</a>
+                    <form action="/logout" method="post">
+                        @csrf
+                        <button type="submit" class="nav-link btn-logout">Log Out</button>
+                    </form>
                 </nav>
             </div>
 
