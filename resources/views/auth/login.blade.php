@@ -8,21 +8,40 @@
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
     @endif
-    <div class="form-floating mb-3">
-        <input type="number" class="form-control formlogin" id="floatingInput" placeholder="28282828" name="nik">
-        <label for="floatingInput">NIK</label>
+    @if (session()->has('loginError'))
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        {{ session('loginError') }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
-    <div class="form-floating">
-        <input type="text" class="form-control formlogin" id="floatingPassword" placeholder="text" name="fullname">
-        <label for="floatingPassword">Nama Lengkap</label>
-    </div>
-    <div class="row mt-3">
-        <div class="col">
-            <a href="/register" class="btn">Saya Pengguna Baru</a>
+    @endif
+    <form action="/login" method="POST">
+        @csrf
+        <div class="form-floating mb-3">
+            <input type="number" class="form-control @error('nik') is-invalid @enderror formlogin" id="floatingInput" placeholder="28282828" name="nik">
+            <label for="floatingInput">NIK</label>
+            @error('nik')
+            <div class="invalid-feedback">
+                {{ $message }}
+            </div>
+            @enderror
         </div>
-        <div class="col text-end">
-            <button class="btn">Masuk</button>
+        <div class="form-floating">
+            <input type="text" class="form-control @error('fullname') is-invalid @enderror formlogin" id="floatingPassword" placeholder="text" name="fullname">
+            <label for="floatingPassword">Nama Lengkap</label>
+            @error('fullname')
+            <div class="invalid-feedback">
+                {{ $message }}
+            </div>
+            @enderror
         </div>
-    </div>
+        <div class="row mt-3">
+            <div class="col">
+                <a href="/register" class="btn">Saya Pengguna Baru</a>
+            </div>
+            <div class="col text-end">
+                <button class="btn">Masuk</button>
+            </div>
+        </div>
+    </form>
 </div>
 @endsection
