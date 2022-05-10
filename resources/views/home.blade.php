@@ -1,5 +1,10 @@
 @extends('layouts.index')
 
-@section('container')
-    <h1>page home</h1>
+@section('main')
+    <div class="main mt-4">
+        Selamat Datang {{ $nama }} di Aplikasi Peduli Diri ini
+    </div>
+    <div class="nav justify-content-end mt-3">
+        <a class="btn" href="#">Isi Catatan Perjalanan</a>
+    </div>
 @endsection

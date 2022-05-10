@@ -14,9 +14,18 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('home');
+    return view('home', [
+        'title' => 'Home',
+        'nama' => 'Haris Muzakki'
+    ]);
 });
 
 Route::get('/login', function () {
     return view('auth.login');
+});
+
+Route::get('/history', function () {
+    return view('history', [
+        'title' => 'Catatan Perjalanan'
+    ]);
 });
