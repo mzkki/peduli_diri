@@ -39,3 +39,9 @@ Route::get('/login', function () {
         'title' => 'Login'
     ]);
 });
+
+Route::get('/register', function () {
+    return view('auth.register', [
+        'title' => 'Register'
+    ]);
+});

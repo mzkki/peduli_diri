@@ -12,10 +12,10 @@
         </div>
         <div class="row mt-3">
             <div class="col">
-                <a href="/register" class="btn">Saya Pengguna Baru</a>
+                <a href="/login" class="btn">Sudah Punya Akun</a>
             </div>
             <div class="col text-end">
-                <button class="btn">Masuk</button>
+                <button class="btn">Daftar</button>
             </div>
         </div>
     </div>
