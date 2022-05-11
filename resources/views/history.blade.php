@@ -1,3 +1,4 @@
+
 @extends('layouts.index')
 
 @section('main')
@@ -14,6 +15,7 @@
     </div>
 </div>
 <div class="main" style="padding: 50px">
+    @if ($histories->count())    
     <table class="sortable">
         <tr>
             <th>Tanggal</th>
@@ -30,6 +32,9 @@
         </tr>
         @endforeach
     </table>
+    @else
+        <p>Data Tidak Ditemukan</p>
+    @endif
     <div class="nav justify-content-end mt-3">
         <a class="btn" href="add">Isi Catatan Perjalanan</a>
     </div>
