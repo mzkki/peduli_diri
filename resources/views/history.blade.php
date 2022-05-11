@@ -28,7 +28,7 @@
             <td>{{ $history->tanggal }}</td>
             <td>{{ $history->waktu }}</td>
             <td>{{ $history->lokasi }}</td>
-            <td>{{ $history->suhu }}</td>
+            <td>{{ $history->suhu }} °C</td>
         </tr>
         @endforeach
     </table>
