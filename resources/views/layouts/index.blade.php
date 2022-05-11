@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="en">
-  <head>
+<head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,18 +10,18 @@
     <link rel="stylesheet" href="css/app.css">
 
     <title>Peduli Diri | {{ $title }}</title>
-  </head>
-  <body>
+</head>
+<body>
 
     @include('layouts.partials.navbar')
- 
+
     {{-- bootstrap --}}
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
     {{-- Fitur Sort Table --}}
     <script src="https://www.kryogenix.org/code/browser/sorttable/sorttable.js"></script>
-  </body>
-  <footer class="fixed-bottom text-center">
+</body>
+<footer class="fixed-bottom text-center mb-4">
     Made With &hearts; by Haris Muzakki Indra
-  </footer>
+</footer>
 </html>
