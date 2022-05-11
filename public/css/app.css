@@ -1,5 +1,5 @@
-body{
-    background-color: #F1EEE9;
+body {
+    background-color: #f1eee9;
 }
 .container {
     margin-top: 100px;
@@ -38,7 +38,7 @@ body{
     padding: 0;
     padding-left: 10px;
     padding-right: 10px;
-    background-color: #F1EEE9;
+    background-color: #f1eee9;
 }
 
 .filter {
@@ -46,7 +46,7 @@ body{
     border-radius: 0;
     padding-left: 3px;
     border: solid black 1px;
-    background-color: #F1EEE9;
+    background-color: #f1eee9;
 }
 
 .header-main {
@@ -69,8 +69,12 @@ th {
     padding: 6px;
 }
 
-tr:nth-child(even){
-    background-color: #DDDDDD;
+th {
+    background-color: #dddddd;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
 }
 
 .formel {
@@ -79,17 +83,17 @@ tr:nth-child(even){
     width: 305px;
     margin-left: 90px;
     border-radius: 0;
-    background-color: #F1EEE9;
+    background-color: #f1eee9;
 }
 
 .formlogin {
     border-radius: 0;
     border: 1px solid black;
     width: 400px;
-    background-color: #F1EEE9;
+    background-color: #f1eee9;
 }
 
 .btn-logout {
     border: 0;
-    background-color: #F1EEE9;
+    background-color: #f1eee9;
 }
