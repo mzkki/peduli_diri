@@ -89,10 +89,18 @@ tr:nth-child(even) {
     background-color: #f1eee9;
 }
 
+.formel:focus{
+    background-color: #f1eee9;
+}
+
 .formlogin {
     border-radius: 0;
     border: 1px solid black;
     width: 400px;
+    background-color: #f1eee9;
+}
+
+.formlogin:focus{
     background-color: #f1eee9;
 }
 
