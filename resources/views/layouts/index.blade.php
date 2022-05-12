@@ -21,7 +21,7 @@
     {{-- Fitur Sort Table --}}
     <script src="https://www.kryogenix.org/code/browser/sorttable/sorttable.js"></script>
 </body>
-<footer class="fixed-bottom text-center mb-4">
+<footer class="fixed-bottom text-center mb-2">
     Made With &hearts; by Haris Muzakki Indra
 </footer>
 </html>
