@@ -18,7 +18,7 @@ class LoginController extends Controller
     public function authenticate(Request $request)
     {
         $credentials = $request->validate([
-            'nik' => 'required|string|max:255',
+            'nik' => 'required|string|min:16|max:16',
             'fullname' => 'required|string|max:255',
         ]);
 

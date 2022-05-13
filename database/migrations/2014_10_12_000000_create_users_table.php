@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->string('nik');
+            $table->bigInteger('nik');
             $table->string('fullname');
             $table->timestamps();
         });

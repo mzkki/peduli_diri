@@ -19,17 +19,17 @@ class DatabaseSeeder extends Seeder
         // \App\Models\User::factory(10)->create();
 
         User::create([
-            'nik' => '6471040812040001',
+            'nik' => 6471040812040001,
             'fullname' => 'Haris Muzakki Indra'
         ]);
 
         User::create([
-            'nik' => '6471040812040002',
+            'nik' => 6471040812040002,
             'fullname' => 'Alif Mulawarman'
         ]);
 
         User::create([
-            'nik' => '6471020810040023',
+            'nik' => 6471020810040023,
             'fullname' => 'Muhammad Selli'
         ]);
 
