@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\History;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class AdminHistoryController extends Controller
@@ -14,9 +15,16 @@ class AdminHistoryController extends Controller
      */
     public function index()
     {
+        $histories = History::latest();
+
+        if (request('filter')) {
+            $histories->where('user_id', request('filter'));
+        }
+
         return view('admin.history.index', [
             'title' => 'Catatan Perjalanan (Admin)',
-            'histories' => History::latest()->paginate(5)
+            'users' => User::all(),
+            'histories' => $histories->paginate(5),
         ]);
     }
 
