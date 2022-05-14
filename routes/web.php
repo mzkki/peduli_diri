@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminHistoryController;
 use App\Http\Controllers\AdminUsersController;
 use App\Http\Controllers\HistoryController;
 use App\Http\Controllers\LoginController;
@@ -36,3 +37,5 @@ Route::post('/register', [RegisterController::class, 'store']);
 Route::resource('history', HistoryController::class)->middleware('auth');
 
 Route::resource('users', AdminUsersController::class)->middleware('admin');
+
+Route::resource('histories', AdminHistoryController::class)->middleware('admin');

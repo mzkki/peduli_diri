@@ -3,11 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\History;
-use Carbon\Carbon;
-use DateTimeZone;
 use Illuminate\Http\Request;
 
-class HistoryController extends Controller
+class AdminHistoryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,9 +14,9 @@ class HistoryController extends Controller
      */
     public function index()
     {
-        return view('user.history', [
-            'title' => 'Catatan Perjalanan',
-            'histories' => History::where('user_id', auth()->user()->id)->get()
+        return view('admin.history.index', [
+            'title' => 'Catatan Perjalanan (Admin)',
+            'histories' => History::latest()->paginate(5)
         ]);
     }
 
@@ -29,14 +27,7 @@ class HistoryController extends Controller
      */
     public function create()
     {
-        $dt = Carbon::now()->timezone('Asia/Makassar');
-        $date = $dt->format('Y-m-d');
-        $time = $dt->format('H:i:s');
-        return view('user.add', [
-            'title' => 'Tambah Data Perjalanan',
-            'date' => $date,
-            'time' => $time
-        ]);
+        //
     }
 
     /**
@@ -47,20 +38,7 @@ class HistoryController extends Controller
      */
     public function store(Request $request)
     {
-        $rules = [
-            'tanggal' => 'required',
-            'waktu' => 'required',
-            'lokasi' => 'required',
-            'suhu' => 'required'
-        ];
-
-        $validatedData = $request->validate($rules);
-
-        $validatedData['user_id'] = auth()->user()->id;
-
-        History::create($validatedData);
-
-        return redirect()->to('/history');
+        //
     }
 
     /**
@@ -80,9 +58,12 @@ class HistoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(History $history)
     {
-        //
+        return view('admin.history.edit', [
+            'title' => 'Edit Data Catatan',
+            'history' => $history
+        ]);
     }
 
     /**
@@ -94,7 +75,20 @@ class HistoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $rules = [
+            'tanggal' => 'required',
+            'waktu' => 'required',
+            'lokasi' => 'required',
+            'suhu' => 'required'
+        ];
+
+        $validatedData = $request->validate($rules);
+
+        $validatedData['user_id'] = $request->user_id;
+
+        History::where('id', $id)->update($validatedData);
+
+        return redirect()->to('histories')->with('success', 'Berhasil mengubah Data Catatan');
     }
 
     /**
@@ -105,6 +99,7 @@ class HistoryController extends Controller
      */
     public function destroy($id)
     {
-        //
+        History::destroy($id);
+        return redirect()->to('histories')->with('success', 'Berhasil Menghapus Data Catatan');
     }
 }
