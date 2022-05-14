@@ -89,7 +89,7 @@ tr:nth-child(even) {
     background-color: #f1eee9;
 }
 
-.formel:focus{
+.formel:focus {
     background-color: #f1eee9;
 }
 
@@ -100,11 +100,19 @@ tr:nth-child(even) {
     background-color: #f1eee9;
 }
 
-.formlogin:focus{
+.formlogin:focus {
     background-color: #f1eee9;
 }
 
 .btn-logout {
     border: 0;
     background-color: #f1eee9;
+}
+.btnedit {
+    text-decoration: none;
+    padding: 7px;
+    margin-right: 5px;
+}
+.btnedit:hover {
+    color: white;
 }

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminUsersController;
 use App\Http\Controllers\HistoryController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
@@ -23,7 +24,6 @@ Route::get('/', function () {
     ]);
 })->middleware('auth');
 
-Route::resource('history', HistoryController::class)->middleware('auth');
 
 Route::get('/login', [LoginController::class, 'index'])->name('login')->middleware('guest');
 Route::post('/login', [LoginController::class, 'authenticate']);
@@ -31,3 +31,8 @@ Route::post('/logout', [LoginController::class, 'logout'])->middleware('auth');
 
 Route::get('/register', [RegisterController::class, 'index'])->middleware('guest');
 Route::post('/register', [RegisterController::class, 'store']);
+
+
+Route::resource('history', HistoryController::class)->middleware('auth');
+
+Route::resource('users', AdminUsersController::class)->middleware('admin');
