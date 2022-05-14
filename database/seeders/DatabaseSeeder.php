@@ -20,7 +20,8 @@ class DatabaseSeeder extends Seeder
 
         User::create([
             'nik' => 6471040812040001,
-            'fullname' => 'Haris Muzakki Indra'
+            'fullname' => 'Haris Muzakki Indra',
+            'is_admin' => true
         ]);
 
         User::create([
