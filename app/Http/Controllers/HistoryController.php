@@ -16,9 +16,17 @@ class HistoryController extends Controller
      */
     public function index()
     {
+        $history = History::where('user_id', auth()->user()->id);
+
+        if (request('filter') == 'oldest') {
+            $history->oldest();
+        } elseif (request('filter') == 'latest') {
+            $history->latest();
+        }
+
         return view('user.history', [
             'title' => 'Catatan Perjalanan',
-            'histories' => History::where('user_id', auth()->user()->id)->get()
+            'histories' => $history->get()
         ]);
     }
 
