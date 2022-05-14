@@ -3,12 +3,12 @@
 @section('main')
 
 <div class="main mt-4" style="padding-left: 150px; padding-right:200px; padding-top: 50px">
-    <form action="/tambah" method="post">
+    <form action="{{ route('history.store') }}" method="post">
         @csrf
         <div class="mb-3 row">
             <label for="tanggal" class="col-sm-2">Tanggal</label>
             <div class="col-sm-10">
-                <input type="date" class="form-control formel @error('tanggal') is-invalid @enderror" id="tanggal" name="tanggal">
+                <input type="date" class="form-control formel @error('tanggal') is-invalid @enderror" id="tanggal" name="tanggal" value="{{ $date }}" readonly>
                 @error('tanggal')
                 <div class="invalid-feedback" style="margin-left: 90px">
                     {{ $message }}
@@ -19,7 +19,7 @@
         <div class="mb-3 row">
             <label for="jam" class="col-sm-2">Jam</label>
             <div class="col-sm-10">
-                <input type="time" class="form-control @error('waktu') is-invalid @enderror formel" id="jam" name="waktu">
+                <input type="time" class="form-control @error('waktu') is-invalid @enderror formel" id="jam" name="waktu" value="{{ $time }}" readonly>
                 @error('waktu')
                 <div class="invalid-feedback" style="margin-left: 90px">
                     {{ $message }}

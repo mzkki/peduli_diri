@@ -24,13 +24,9 @@ Route::get('/', function () {
     ]);
 })->middleware('auth');
 
-Route::get('/history', [HistoryController::class, 'index'])->middleware('auth');
+// Route::get('/history', [HistoryController::class, 'index'])->middleware('auth');
 
-Route::get('/add', function () {
-    return view('add', [
-        'title' => 'Tambah Data Perjalanan'
-    ]);
-})->middleware('auth');
+Route::resource('history', HistoryController::class)->middleware('auth');
 
 Route::get('/login', [LoginController::class, 'index'])->name('login')->middleware('guest');
 Route::post('/login', [LoginController::class, 'authenticate']);
@@ -39,4 +35,10 @@ Route::post('/logout', [LoginController::class, 'logout'])->middleware('auth');
 Route::get('/register', [RegisterController::class, 'index'])->middleware('guest');
 Route::post('/register', [RegisterController::class, 'store']);
 
-Route::post('/tambah', [HistoryController::class, 'store']);
+// Route::post('/tambah', [HistoryController::class, 'store']);
+
+// Route::get('/add', function () {
+//     return view('add', [
+//         'title' => 'Tambah Data Perjalanan'
+//     ]);
+// })->middleware('auth');

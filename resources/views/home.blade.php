@@ -5,6 +5,6 @@
     Selamat Datang {{ auth()->user()->fullname }} di Aplikasi Peduli Diri ini
 </div>
 <div class="nav justify-content-end mt-3">
-    <a class="btn" href="add">Isi Catatan Perjalanan</a>
+    <a class="btn" href="history/create">Isi Catatan Perjalanan</a>
 </div>
 @endsection
