@@ -16,7 +16,7 @@ class HistoryController extends Controller
      */
     public function index()
     {
-        return view('history', [
+        return view('user.history', [
             'title' => 'Catatan Perjalanan',
             'histories' => History::where('user_id', auth()->user()->id)->get()
         ]);
@@ -29,11 +29,10 @@ class HistoryController extends Controller
      */
     public function create()
     {
-        // $date = new DateTime('now', new DateTimeZone('Asia/Makassar'));
         $dt = Carbon::now()->timezone('Asia/Makassar');
         $date = $dt->format('Y-m-d');
         $time = $dt->format('H:i:s');
-        return view('add', [
+        return view('user.add', [
             'title' => 'Tambah Data Perjalanan',
             'date' => $date,
             'time' => $time

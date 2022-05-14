@@ -4,7 +4,6 @@ use App\Http\Controllers\HistoryController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use Illuminate\Support\Facades\Route;
-use App\Models\History;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,13 +17,11 @@ use App\Models\History;
 */
 
 Route::get('/', function () {
-    return view('home', [
+    return view('user.home', [
         'title' => 'Home',
         'nama' => 'Haris Muzakki'
     ]);
 })->middleware('auth');
-
-// Route::get('/history', [HistoryController::class, 'index'])->middleware('auth');
 
 Route::resource('history', HistoryController::class)->middleware('auth');
 
@@ -34,11 +31,3 @@ Route::post('/logout', [LoginController::class, 'logout'])->middleware('auth');
 
 Route::get('/register', [RegisterController::class, 'index'])->middleware('guest');
 Route::post('/register', [RegisterController::class, 'store']);
-
-// Route::post('/tambah', [HistoryController::class, 'store']);
-
-// Route::get('/add', function () {
-//     return view('add', [
-//         'title' => 'Tambah Data Perjalanan'
-//     ]);
-// })->middleware('auth');
