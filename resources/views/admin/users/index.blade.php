@@ -26,7 +26,7 @@
                     <form action="{{ route('users.destroy', $user->nik) }}" method="POST">
                         @csrf
                         @method('delete')
-                        <button class="badge bg-danger py-2" type="submit" style="border: 0">Hapus</button>
+                        <button class="badge bg-danger py-2" type="submit" style="border: 0" onclick="return confirm('are you sure ?')">Hapus</button>
                     </form>
                 </div>
             </td>
