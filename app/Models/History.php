@@ -16,10 +16,10 @@ class History extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function scopeFilter($query)
+    public function scopeFilter($query, array $filters)
     {
-        if (request('filter')) {
-            return $query->where('user_id', request('filter'));
-        }
+        $query->when($filters['filter'] ?? false, function ($query, $filter) {
+            return $query->where('user_id', $filter);
+        });
     }
 }

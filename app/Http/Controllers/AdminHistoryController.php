@@ -18,7 +18,7 @@ class AdminHistoryController extends Controller
         return view('admin.history.index', [
             'title' => 'Catatan Perjalanan (Admin)',
             'users' => User::all(),
-            'histories' => History::latest()->filter()->paginate(5),
+            'histories' => History::latest()->filter(request(['filter']))->paginate(5)->withQueryString(),
         ]);
     }
 
