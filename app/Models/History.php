@@ -15,4 +15,11 @@ class History extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    public function scopeFilter($query)
+    {
+        if (request('filter')) {
+            return $query->where('user_id', request('filter'));
+        }
+    }
 }
