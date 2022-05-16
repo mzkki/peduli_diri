@@ -15,16 +15,10 @@ class AdminHistoryController extends Controller
      */
     public function index()
     {
-        $histories = History::latest();
-
-        if (request('filter')) {
-            $histories->where('user_id', request('filter'));
-        }
-
         return view('admin.history.index', [
             'title' => 'Catatan Perjalanan (Admin)',
             'users' => User::all(),
-            'histories' => $histories->paginate(5),
+            'histories' => History::latest()->filter(request(['filter']))->paginate(5)->withQueryString(),
         ]);
     }
 
