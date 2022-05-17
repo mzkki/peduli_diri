@@ -31,12 +31,12 @@
 
     <table>
         <tr>
-            <td>Nama Pengguna</td>
-            <td>Tanggal</td>
-            <td>Waktu</td>
-            <td>Lokasi</td>
-            <td>Suhu</td>
-            <td>Aksi</td>
+            <th>Nama Pengguna</th>
+            <th>Tanggal</th>
+            <th>Waktu</th>
+            <th>Lokasi</th>
+            <th>Suhu</th>
+            <th>Aksi</th>
         </tr>
         @foreach ($histories as $history)
         <tr>
