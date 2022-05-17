@@ -15,10 +15,16 @@ class AdminUsersController extends Controller
      */
     public function index()
     {
+        if (request('page')) {
+            $skipped = (request()->input('page') - 1) * 5;
+        } else {
+            $skipped = 0;
+        }
+
         return view('admin.users.index', [
             'title' => 'Data Users',
             'users' => User::latest()->paginate(5),
-            'skipped' => (request()->input('page') - 1) * 5
+            'skipped' => $skipped
         ]);
     }
 
