@@ -16,7 +16,6 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
 
         User::create([
             'nik' => 6471040812040001,
@@ -33,6 +32,10 @@ class DatabaseSeeder extends Seeder
             'nik' => 6471020810040023,
             'fullname' => 'Muhammad Selli'
         ]);
+
+        User::factory(7)->create();
+
+        History::factory(10)->create();
 
         History::create([
             'user_id' => 1,
