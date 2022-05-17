@@ -29,7 +29,7 @@
     @endif
     @if ($histories->count())
 
-    <table>
+    <table class="admintable">
         <tr>
             <th>Nama Pengguna</th>
             <th>Tanggal</th>
