@@ -25,6 +25,8 @@
             <div class="invalid-feedback">
                 {{ $message }}
             </div>
+            @else
+            <p class="text-muted mt-1" style="font-size: 10pt">Kode NIK Harus 16 Digit</p>
             @enderror
         </div>
         <div class="form-floating">
