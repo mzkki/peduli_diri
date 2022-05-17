@@ -17,7 +17,8 @@ class AdminUsersController extends Controller
     {
         return view('admin.users.index', [
             'title' => 'Data Users',
-            'users' => User::all()
+            'users' => User::latest()->paginate(5),
+            'skipped' => (request()->input('page') - 1) * 5
         ]);
     }
 
