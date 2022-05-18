@@ -9,7 +9,7 @@
 
         <div class="mb-3 row">
             <label for="nik" class="col-sm-2">NIK</label>
-            <input type="number" class="formel @error('nik') is-invalid @enderror form-control" name="nik" value="{{ old('nik', $user->nik) }}">
+            <input type="number" oninput="javascript: if(this.value.length > this.maxLength) this.value = this.value.slice(0,this.maxLength);" maxlength="16" class="formel @error('nik') is-invalid @enderror form-control" name="nik" value="{{ old('nik', $user->nik) }}">
             @error('nik')
             <div class="invalid-feedback" style="margin-left: 160px">
                 {{ $message }}
